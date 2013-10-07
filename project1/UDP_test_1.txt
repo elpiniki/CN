@@ -1,0 +1,26 @@
+Script started on Sun Oct  6 21:34:58 2013
+$python FTPClientUsingUDP.py 127.0.0.1 flag.jpg newflag.jpg
+
+INFO (seq# 44329) 'flag.jpg' --> timeout!
+INFO (seq# 10390) 'flag.jpg' --> timeout!
+INFO (seq# 41300) 'flag.jpg' --> #0  8918 bytes
+GET #0 (flag.jpg): 1024B from 0 --> 1024 bytes
+GET #0 (flag.jpg): 1024B from 1024 --> 1024 bytes
+GET #0 (flag.jpg): 1024B from 2048 --> 1024 bytes
+GET #0 (flag.jpg): 1024B from 3072 --> 1024 bytes
+GET #0 (flag.jpg): 1024B from 4096 --> timeout!
+GET #0 (flag.jpg): 1024B from 4096 --> 1024 bytes
+GET #0 (flag.jpg): 1024B from 5120 --> timeout!
+GET #0 (flag.jpg): 1024B from 5120 --> timeout!
+GET #0 (flag.jpg): 1024B from 5120 --> timeout!
+GET #0 (flag.jpg): 1024B from 5120 --> 1024 bytes
+GET #0 (flag.jpg): 1024B from 6144 --> timeout!
+GET #0 (flag.jpg): 1024B from 6144 --> 1024 bytes
+GET #0 (flag.jpg): 1024B from 7168 --> 1024 bytes
+GET #0 (flag.jpg): 1024B from 8192 --> timeout!
+GET #0 (flag.jpg): 1024B from 8192 --> 726 bytes
+
+$ exit
+exit
+
+Script done on Sun Oct  6 21:35:20 2013

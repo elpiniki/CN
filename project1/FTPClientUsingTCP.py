@@ -11,7 +11,7 @@ from socket import *
 import sys
 
 # STUDENTS - replace your server machine's name or IP address
-serverName = "127.0.0.1"
+serverName = sys.argv[1]
 serverPort = 12345
 clientSocket = socket(AF_INET, SOCK_STREAM)
 
@@ -34,8 +34,8 @@ def get_file(clientSocket, test):
     clientSocket.sendall('ok')
     return recvd
 
-recvdfile = get_file(clientSocket, sys.argv[1])
-file(sys.argv[1], 'wb').write(recvdfile)
+recvdfile = get_file(clientSocket, sys.argv[2])
+file(sys.argv[2], 'wb').write(recvdfile)
 
 clientSocket.sendall('end\n') 
 clientSocket.close()
