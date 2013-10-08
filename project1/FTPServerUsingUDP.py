@@ -13,17 +13,11 @@ import struct
 import os
 import random
 import binascii
+from itertools import count
 
 
-# Generator function. Creates an iterator that returns increasing numbers every time it's called
-def counter():
-	count = 0
-	while True:
-		yield count
-		count += 1
-
-file_index = defaultdict( counter().next )	# maps filenames to numbers
-file_handle = {} # maps file id numbers to open file handles
+file_index = defaultdict( count().next )				# maps filenames to numbers
+file_handle = {} 										# maps file id numbers to open file handles
 
 
 # tests connection reliability by only sometimes actually sending a packet
@@ -37,7 +31,7 @@ def broken_send(sock, *args):
 serverPort = 12345
 
 sock = socket.socket(socket.AF_INET,  socket.SOCK_DGRAM)
-sock.bind(('localhost', serverPort))					# open UDP socket on server
+sock.bind(('0.0.0.0', serverPort))						# open UDP socket on server allowing the world access
 
 print ("Server is up:", serverPort)
 
