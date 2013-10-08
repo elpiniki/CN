@@ -37,8 +37,8 @@ def get_file(sock, server, fname):
 			assert header == "\x33\x81" and inreqid == outreqid						# ensure packet correct
 			print "#%d  %d bytes" % (fid, fsize)
 			break																	# go along
-		except (socket.timeout, AssertionError):									# if timeout or bad packet, re-request
-			print "timeout!"
+		except (socket.timeout, AssertionError) as poo:									# if timeout or bad packet, re-request
+			print poo
 			pass
 
 	length = 1024																	# max data chunk size to request
@@ -60,8 +60,8 @@ def get_file(sock, server, fname):
 				recvbuf += rxbytes													# add response to end of buffer
 				break
 
-			except (socket.timeout, AssertionError):								# bad packet or lost packet
-				print "timeout!"
+			except (socket.timeout, AssertionError) as poo:								# bad packet or lost packet
+				print poo
 				pass
 	return recvbuf																	# file all gotten, return it
 

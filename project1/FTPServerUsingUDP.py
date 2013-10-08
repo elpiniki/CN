@@ -12,6 +12,7 @@ from collections import defaultdict
 import struct
 import os
 import random
+import binascii
 
 
 # Generator function. Creates an iterator that returns increasing numbers every time it's called
@@ -74,5 +75,8 @@ while True:
 			rdata = fhandle.read(length)				# read the desired bytes from the file
 			response = "\x33\x82" + struct.pack(">II", fid, offset) + rdata # response: <fileID> <byte_offset> <data>
 			broken_send(sock, response, requestor)
+		else:
+			print requestor, "malformed packet:", binascii.hexlify(data)
+
 
 
